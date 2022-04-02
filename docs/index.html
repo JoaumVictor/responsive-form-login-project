@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Formulário CSS</title>
+</head>
+<body>
+  <div class="container">
+    <div class="box-info">
+      <div class="box login">
+        <h2>Já tem uma conta?</h2>
+        <button class="loginBt">Entrar</button>
+      </div>
+      <div class="box cadastro">
+        <h2>Ainda não tem uma conta?</h2>
+        <button class="cadastrarBt">Cadastre-se</button>
+      </div>
+    </div>
+    <div class="formBox">
+      <div class="form loginInput">
+        <form>
+          <h2>Entre</h2>
+          <input type="text" placeholder="email">
+          <input type="password" placeholder="senha">
+          <button class="but" type="button">Login</button>
+          <a class="esqueceu" href="#">Esqueceu a senha?</a>
+        </form>
+      </div>
+      <div class="form cadastroInput">
+        <form>
+          <h2>Cadastre-se</h2>
+          <input type="text" placeholder="Usuario">
+          <input type="text" placeholder="email">
+          <input type="password" placeholder="senha">
+          <input type="password" placeholder="confirme sua senha">
+          <button class="but" type="button">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    const login = document.querySelector('.loginBt');
+    const cadastrar = document.querySelector('.cadastrarBt');
+    const formBox = document.querySelector('.formBox');
+    const body = document.querySelector('body');
+    const bugCad = document.querySelector('.cadastroInput');
+
+    const ativar = () => {
+      formBox.classList.add('ativo');
+      body.classList.add('ativoBody');
+    }
+
+    const desativar = () => {
+      formBox.classList.remove('ativo');
+      body.classList.remove('ativoBody');
+    }
+
+    cadastrar.addEventListener('click', () => ativar());
+    login.addEventListener('click', () => desativar());
+  </script>
+</body>
+</html>
